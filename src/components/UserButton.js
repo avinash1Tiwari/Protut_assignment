@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import './Button.css'
-const UserButton = ({children}) => {
+const UserButton = ({children,handleClick}) => {
   return (
     <div className="">
 
@@ -25,7 +25,7 @@ const UserButton = ({children}) => {
           mass: 0.1,
         },
       }}
-      className="px-6 py-2 rounded-md relative radial-gradient bg-neutral-950 w-52"
+      className="px-6 py-2 rounded-md relative radial-gradient bg-neutral-950 w-52" onClick={handleClick}
     >
      
       <span className="block absolute inset-0 rounded-md p-px linear-overlay" />

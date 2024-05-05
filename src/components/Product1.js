@@ -4,7 +4,7 @@ const Product1 = () =>{
 
   return(
 
-    <div className ="flex  justify-center bg-slate-600 px-3">
+    <div className ="flex  justify-center px-3">
       <Items href="#" Itemcontent = {PriceContent} className = "font-bold text-xl">Products</Items>
       
     </div>
@@ -24,7 +24,7 @@ const Items = ({children,href,Itemcontent}) =>{
       onMouseLeave={() => setOpen(false)}
     >
     <div className=" group relative  h-fit w-fit">
-      <a href={href} className="relative text-black">{children}
+      <a href={href} className="relative ">{children}
         <span 
         style={{
           transform : showItem ?  "scale(1)" : "scale(0)",

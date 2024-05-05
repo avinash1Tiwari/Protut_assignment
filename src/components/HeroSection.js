@@ -37,23 +37,25 @@ const HeroSection = () => {
   }, [vidIndex]);
 
   const handleClick = (index) => {
+    console.log("vedio press hai bhai")
     setVidIndex(index);
   };
 
   return (
-    <div className='pt-10 w-6/12 m-auto pb-20'>
+    <div className='pt-10 w-6/12 m-auto pb-28'>
         <div>
             <h3 className="text-white text-center text-2xl">Here's How it works</h3>
         </div>
     <div className="hero-container mt-20 pt-16">
-      <div className="video-frame">
+      <div className="relative mx-0 my-auto w-full h-96 max-md:h-86
+   ">
         {videos.map((src, index) => (
-          <div key={index} className={`video-container ${vidIndex === index ? "active" : ""}`}>
+          <div key={index} className={`absolute top-0 left-0 w-full h-full max-md:w-[75%] max-md:h-[75%] max-md:-left-12 max-md:top-7  ${vidIndex === index ? "active" : ""}`}>
             {index === vidIndex && (
               <>
                 {index === 0 || index === 1 ? (
                   <video
-                    className="video"
+                    className="video w-60 max-md:m-auto"
                     src={src}
                     autoPlay={false}
                     muted
@@ -74,19 +76,19 @@ const HeroSection = () => {
           </div>
         ))}
       </div>
-      <div className="absolute -left-20 -top-8">
-      <UserButton  onClick={() => handleClick(0)}>Play Video 1</UserButton>
+      <div className="absolute -left-20 -top-2">
+      <UserButton ind="0" onClick={() => handleClick(0)}>Play Video 1</UserButton>
       </div>
-      <div className="absolute -right-20 -top-8">
-      <UserButton  onClick={() => handleClick(1)}>Play Video 2</UserButton>
+      <div className="absolute -right-20 -top-2">
+      <UserButton ind="1" handleClick={() => handleClick(1)}>Play Video 2</UserButton>
 
       </div>
-      <div className="absolute -left-20 -bottom-8">
-      <UserButton  onClick={() => handleClick(2)}>Play Video 3</UserButton>
+      <div className="absolute -left-20 -bottom-16">
+      <UserButton ind="2" handleClick={() => handleClick(2)}>Play Video 3</UserButton>
 
       </div>
-      <div className="absolute -right-20 -bottom-8">
-      <UserButton  onClick={() => handleClick(3)}>Play Video 4</UserButton>
+      <div className="absolute -right-20 -bottom-16">
+      <UserButton ind="3" handleClick={() => handleClick(3)}>Play Video 4</UserButton>
 
       </div>
     </div>
